@@ -29,6 +29,15 @@ class ProductController extends Controller
            'shirtProducts' => $shirtProducts,
         ]);
     }
+    
+    public function getOthers()
+    {
+        $otherProducts = Product::whereBetween('id', [25, 27])->orderBy('name')->get();
+        
+        return view('product.others', [
+           'otherProducts' => otherProducts,
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.

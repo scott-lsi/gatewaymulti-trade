@@ -23,6 +23,7 @@ Route::get('/export2', 'ExportController@lloydExport');
 Route::group(['middleware' => ['accesscode']], function(){
     Route::get('/products', 'ProductController@index');
     Route::get('/shirts', 'ProductController@getShirts');
+    Route::get('/others', 'ProductController@getOthers');
     Route::resource('product', 'ProductController');
     Route::get('product/personaliser/{id}/{gatewaymulti?}', 'ProductController@personaliser');
     Route::get('product/personaliser/epa/{id}', 'ProductController@getExternalPricingAPI');
