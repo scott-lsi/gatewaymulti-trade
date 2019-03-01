@@ -35,7 +35,7 @@ class ProductController extends Controller
         $otherProducts = Product::whereBetween('id', [25, 27])->orderBy('name')->get();
         
         return view('product.others', [
-           'otherProducts' => otherProducts,
+           'otherProducts' => $otherProducts,
         ]);
     }
 
