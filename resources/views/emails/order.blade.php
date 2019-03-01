@@ -7,7 +7,7 @@
 <tr>
 	<td>
         <p style="font-size:14px; margin-top:30px; margin-bottom:20px;">Hi {{ $name }},</p>
-        <p style="font-size:14px; margin-top:30px; margin-bottom:20px;">Thank you for visiting us at SMMEX. Your personalised product will be despatched to you within the next couple of days.</p>
+        <p style="font-size:14px; margin-top:30px; margin-bottom:20px;">Thank you for visiting us at {{ env('APP_NAME') }} . Your personalised product will be despatched to you within the next couple of days.</p>
 	</td>
 </tr>
 

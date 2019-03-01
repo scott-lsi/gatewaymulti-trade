@@ -79,4 +79,33 @@ class ExportController extends Controller
         
         return 'done';
     }
+    
+    public function lloydExport(){
+        $orders = Order::all();
+        
+        $array = [];
+        foreach($orders as $order){
+            $thisOrder['orderid'] = $order->orderid;
+            $thisOrder['name'] = $order->name;
+            $thisOrder['email'] = $order->email;
+            $thisOrder['company'] = $order->company;
+            $thisOrder['created_at'] = $order->created_at;
+            
+            $thisOrderBasket = json_decode($order->basket, true);
+            $basketItems = '';
+            foreach($thisOrderBasket as $row){
+                $basketItems = $basketItems . ', ' . $row['name'];
+                $thisOrder['items'] = substr($basketItems, 2);
+            }
+                
+            array_push($array, $thisOrder);
+        }
+        
+        
+        $file = \Excel::create('SMMEX_export', function($excel) use($array){
+            $excel->sheet('orders', function($sheet) use($array){
+               $sheet->fromArray($array);
+            });
+        })->export('xlsx');
+    }
 }

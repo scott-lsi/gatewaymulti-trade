@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Personaliser') }}</title>
+    <title>LSi at {{ config('app.name', 'Personaliser') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,11 +30,11 @@
                     <!-- Branding Image -->
                     @if(session('accesscode'))
                     <a class="navbar-brand" href="{{ action('ProductController@index') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        LSi @ {{ config('app.name', 'Laravel') }}
                     </a>
                     @else
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        LSi @ {{ config('app.name', 'Laravel') }}
                     </a>
                     @endif
                 </div>

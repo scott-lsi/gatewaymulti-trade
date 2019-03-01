@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-    <h1>LSi at the Souvenirs, Memorabilia &amp; Merchandise Exhibition</h1>
+    <h1>LSi at {{ env('APP_NAME') }}</h1>
     
     <hr>
     
