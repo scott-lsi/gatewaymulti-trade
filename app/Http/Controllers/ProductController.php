@@ -32,7 +32,7 @@ class ProductController extends Controller
     
     public function getOthers()
     {
-        $otherProducts = Product::whereIn('id', [21, 22, 25, 26, 27, 28])->orderBy('name')->get();
+        $otherProducts = Product::whereIn('id', [21, 22, 25, 26, 27, 28, 29])->orderBy('name')->get();
         
         return view('product.others', [
            'otherProducts' => $otherProducts,
