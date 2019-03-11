@@ -36,7 +36,7 @@ class ExportController extends Controller
             $thisorder = [
                 'orderid' => $order->orderid,
                 'placed_by' => $order->name,
-                'recipient' => $order->recipient,
+                'email' => $order->email,
                 'date' => $order->created_at,
                 'total' => number_format($total, 2),
                 'items' => substr($items, 2), // remove leading comma
@@ -47,7 +47,7 @@ class ExportController extends Controller
                 $thisproduct = [
                     'orderid' => $order->orderid,
                     'placed_by' => $order->name,
-                    'recipient' => $order->recipient,
+                    'email' => $order->email,
                     'date' => $order->created_at,
                     'qty' => $row['qty'],
                     'total' => number_format($row['subtotal'], 2),
