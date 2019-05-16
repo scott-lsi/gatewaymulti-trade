@@ -10,7 +10,7 @@ class ExportController extends Controller
 {
     public function exportOrders(){
         $today = new \Datetime();
-        $onemonth = new \DateInterval('P1M');
+        $onemonth = new \DateInterval('P3M');
         $today_formatted = $today->format('Y-m-d');
         $monthago_formatted = $today->sub($onemonth)->format('Y-m-d');
         

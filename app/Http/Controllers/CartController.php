@@ -146,7 +146,7 @@ class CartController extends Controller
         // save it all and send things
         $order->save();
         $this->gatewaySend($g3d);
-        $this->sendOrderEmail($view_data, $email_data);
+        //$this->sendOrderEmail($view_data, $email_data);
         
         Cart::destroy();
         
