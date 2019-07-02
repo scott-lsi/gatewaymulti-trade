@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         //$multiProducts = Product::whereNotNull('gatewaymulti')->get();
-        $products = Product::all();
+        $products = Product::orderBy('updated_at')->get();
         
         return view('product.index', [
            //'multiProducts' => $multiProducts,
