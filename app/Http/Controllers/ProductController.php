@@ -14,10 +14,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $multiProducts = Product::whereNotNull('gatewaymulti')->get();
+        //$multiProducts = Product::whereNotNull('gatewaymulti')->get();
+        $products = Product::all();
         
         return view('product.index', [
-           'multiProducts' => $multiProducts,
+           //'multiProducts' => $multiProducts,
+           'products' => $products,
         ]);
     }
     

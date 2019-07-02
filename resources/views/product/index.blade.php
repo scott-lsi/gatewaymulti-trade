@@ -7,10 +7,8 @@
     
     <hr>
     
-    <h2>Presentation Box</h2>
-    
     <div class="row">
-        @foreach($multiProducts as $product)
+        @foreach($products as $product)
         <div class="col-sm-3 text-center">
             {{--<a href="{{ action('ProductController@show', $product->id)}}">--}}
             @if($product->gatewaymulti)

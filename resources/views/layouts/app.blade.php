@@ -43,9 +43,9 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @if(session('accesscode'))
-                        <li><a href="{{ action('ProductController@index') }}">Presentation Box</a></li>
+                        {{--<li><a href="{{ action('ProductController@index') }}">Presentation Box</a></li>
                         <li><a href="{{ action('ProductController@getShirts') }}">Shirts</a></li>
-                        <li><a href="{{ action('ProductController@getOthers') }}">Other Products</a></li>
+                        <li><a href="{{ action('ProductController@getOthers') }}">Other Products</a></li>--}}
                         <li><a href="{{ action('CartController@index') }}">Basket</a></li>
                         <li><a href="{{ action('PageController@logout') }}">Log Out</a></li>
                         @endif
