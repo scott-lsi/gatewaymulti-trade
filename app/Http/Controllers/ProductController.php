@@ -114,22 +114,12 @@ class ProductController extends Controller
     public function personaliser($id, $gatewaymultiId = null){
         $product = Product::find($id);
         
-        /* acp2 not applying stroke
-        if(\App::environment('local')) { $iframeUrl = 'https://app.gateway3d.com/acp/app/?l=acp2'; }
-        else { $iframeUrl = 'https://my.gateway3d.com/acp/app/?l=acp2'; }
-        $iframeUrl .= '&c=' . env('GATEWAY_CONFIG');
-        $iframeUrl .= '#p=' . $product->gateway;
-        $iframeUrl .= '&guid=' . env('GATEWAY_COMPANY');
-        $iframeUrl .= '&r=multi';
-        $iframeUrl .= '&ep3dUrl=' . action('CartController@add', [$gatewaymultiId]);*/
-        
-        if(\App::environment('local')) { $iframeUrl = 'https://app.gateway3d.com/acp/app/?l=acp3'; }
-        else { $iframeUrl = 'https://my.gateway3d.com/acp/app/?l=acp3'; }
-        $iframeUrl .= '&c=' . env('GATEWAY_CONFIG');
+        $iframeUrl = 'https://g3d-app.com/s/app/acp3_2/en_GB/';
+        $iframeUrl .= env('GATEWAY_CONFIG') . '.html';
         $iframeUrl .= '#p=' . $product->gateway;
         $iframeUrl .= '&guid=' . env('GATEWAY_COMPANY');
         $iframeUrl .= '&r=2d-canvas';
-        $iframeUrl .= '&ep3dUrl=' . action('CartController@add', [$gatewaymultiId]);
+        $iframeUrl .= '&ep3dUrl=' . rawurlencode(action('CartController@add', [$gatewaymultiId]));
         
         return view('product.personaliser', [
             'product' => $product,
